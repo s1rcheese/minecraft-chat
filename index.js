@@ -2,9 +2,7 @@ const mineflayer = require('mineflayer');
 const readline = require('readline');
 const config = require('./config.json');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-});
+const rl = readline.createInterface({ input: process.stdin });
 
 const bot = mineflayer.createBot({
   host: config.host,

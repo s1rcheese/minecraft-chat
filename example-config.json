@@ -2,5 +2,6 @@
     "host": "localhost",
     "port": "25565",
     "username": "Replace this with your email if you are signing into a Mojang or Microsoft account",
-    "pass": "Replace this with your password if you are signing into a Mojang or Microsoft  account"
+    "pass": "Replace this with your password if you are signing into a Mojang or Microsoft  account",
+    "version": "It defaults automatically to the newest version"
 }

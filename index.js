@@ -8,8 +8,9 @@ const bot = mineflayer.createBot({
   host: config.host,
   port: config.port,
   username: config.username,
-  password: config.pass, /*
-  auth: 'microsoft' */ // If you need to use Microsoft auth instead of Mojand, get rid of the /* */ part
+  password: config.pass,
+  version: config.version, /*
+  auth: 'microsoft' */ // If you need to use Microsoft auth instead of Mojang, get rid of the /* */ part
 });
 
 bot.loadPlugin(afk)

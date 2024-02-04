@@ -8,8 +8,12 @@ const bot = mineflayer.createBot({
   host: config.host,
   port: config.port,
   username: config.username,
-  password: config.pass
+  password: config.pass, /*
+  auth: 'microsoft' */ // If you need to use Microsoft auth instead of Mojand, get rid of the /* */ part
 });
+
+bot.loadPlugin(afk)
+bot.loadPlugin(antiwater)
 
 rl.on('line', (input) => {
   if(input){
@@ -19,6 +23,13 @@ rl.on('line', (input) => {
 });
 
 rl.on('error', err => console.log(err));
+
+bot.once('spawn', () => {
+  mineflayerViewer(bot, { port: 3007, firstPerson: true })
+  mineflayerViewer(bot, { port: 3008, firstPerson: false })
+  bot.afk.start();
+  bot.antiwater.start();
+})
 
 bot.on('chat', function (username, message) {
   if (username === bot.username) return

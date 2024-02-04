@@ -1,4 +1,5 @@
 const mineflayer = require('mineflayer');
+const mineflayerViewer = require('prismarine-viewer').mineflayer
 const readline = require('readline');
 const config = require('./config.json');
 const afk = require('./plugin/afk');

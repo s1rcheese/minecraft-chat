@@ -8,7 +8,7 @@ const rl = readline.createInterface({ input: process.stdin });
 
 const bot = mineflayer.createBot({
   host: config.host,
-  //port: config.port,
+  port: config.port,
   username: config.username,
   password: config.pass,
   version: config.version,

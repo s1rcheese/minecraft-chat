@@ -4,16 +4,15 @@ const readline = require('readline');
 const config = require('./config.json');
 const afk = require('./plugin/afk');
 const antiwater = require('./plugin/antiwater');
-
 const rl = readline.createInterface({ input: process.stdin });
 
 const bot = mineflayer.createBot({
   host: config.host,
-  port: config.port,
+  //port: config.port,
   username: config.username,
   password: config.pass,
-  version: config.version, /*
-  auth: 'microsoft'  */ // If you need to use Microsoft auth instead of Mojang, get rid of the /* */ part
+  version: config.version,
+  //auth: 'microsoft'   // If you need to use Microsoft auth instead of Mojang, get rid of the /* */ part
 });
 
 bot.loadPlugin(afk)
@@ -21,7 +20,7 @@ bot.loadPlugin(antiwater)
 
 rl.on('line', (input) => {
   if(input){
-    bot.chat(input);
+    bot._client.chat(input);
     //console.log(`Received: ${input}`);
   }
 });
